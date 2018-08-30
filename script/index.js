@@ -1,30 +1,67 @@
-var app = new new Vue({
+var app = new Vue({
     el: '#app',
     data:{
-        list:[
+        columns:[
             {
-                id:1,
-                name:'iPhone 7',
-                price:6188,
-                count:1
+                title:'姓名',
+                key:'name'
             },
             {
-                id:2,
-                name:'iPad Pro',
-                price:5888,
-                count:1
-            },{
-                id:3,
-                name:'MacBook Pro',
-                price:21488,
-                count:1
+                title:'年龄',
+                key:'age',
+                sortable:true
+            },
+            {
+                title:'出生日期',
+                key:'birthday',
+                sortable:true
+            },
+            {
+                title:'地址',
+                key:'address'
+            }
+        ],
+        data:[
+            {
+                name:'letme',
+                age:18,
+                birthday:'1999-02-21',
+                address:'武汉市江汉区'
+            },
+            {
+                name:'mlxg',
+                age:19,
+                birthday:'1996-02-21',
+                address:'武汉市江汉区'
+            },
+            {
+                name:'xiaohu',
+                age:20,
+                birthday:'1989-02-21',
+                address:'武汉市江汉区'
+            },
+            {
+                name:'uzi',
+                age:21,
+                birthday:'1994-02-21',
+                address:'武汉市江汉区'
+            },
+            {
+                name:'ming',
+                age:22,
+                birthday:'1991-02-21',
+                address:'武汉市江汉区'
             }
         ]
     },
-    computed:{
-
-    },
     methods:{
-
+        handleAddData:function(){
+            this.data.push({
+                name:'karsa',
+                age:25,
+                birthday:'1998-05-30',
+                address:'武汉市洪山区'
+            });
+        }
     }
-})  
+});
